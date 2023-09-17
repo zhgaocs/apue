@@ -1,5 +1,5 @@
 /*
- * 创建一个具有空洞的文件
+ * create a file with holes
  */
 #include <fcntl.h>
 #include <stdio.h>

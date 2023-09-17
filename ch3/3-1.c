@@ -1,5 +1,5 @@
 /*
- * 用于测试能否对标准输入设置偏移量
+ * is it possible to set an offset to standard input
  */
 
 #include <stdio.h>
