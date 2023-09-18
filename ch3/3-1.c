@@ -1,7 +1,6 @@
-/*
+/**
  * is it possible to set an offset to standard input
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

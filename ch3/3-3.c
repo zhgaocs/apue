@@ -1,7 +1,6 @@
-/* 
+/** 
  *  copy standard input to standard output
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

@@ -1,4 +1,4 @@
-/*
+/**
  * create a file with holes
  */
 #include <fcntl.h>
