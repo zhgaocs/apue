@@ -1,4 +1,4 @@
-/** 
+/**
  *  copy standard input to standard output
  */
 #include <stdio.h>
@@ -14,10 +14,16 @@ int main()
 
     while ((n = read(STDIN_FILENO, buf, BUFFSIZE)) > 0)
         if (write(STDOUT_FILENO, buf, n) != n)
+        {
             fprintf(stderr, "write error");
+            exit(1);
+        }
 
     if (n < 0)
+    {
         fprintf(stderr, "write error");
+        exit(1);
+    }
 
     exit(0);
 }
