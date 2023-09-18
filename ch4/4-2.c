@@ -1,7 +1,5 @@
 /**
- *
- *
- *
+ * access function example
  */
 #include <fcntl.h>
 #include <stdio.h>
