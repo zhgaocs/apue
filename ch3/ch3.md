@@ -55,12 +55,24 @@ int open(const char *pathname, int oflag, ... /* mode_t mode */);
 #### 2.3.3 其他
 
 + `O_SYNC`：等待写完成（数据和属性）
-
 + `O_DSYNC`：等待写完成（仅数据）
 + `O_RSYNC`：同步读写
 + ……
 
-### 2.4 文件名和路径名截断
+### 2.4 参数`mode`
+
+只有参数`oflag`为`O_CREAT`时才可设置此参数
+
+#### 2.4.1 作用
+
+该参数用于设置文件访问权限的初始值，和用户掩码`umask`有关
+
+#### 2.4.2 参数形式
+
++ 八进制数：如0777（rwxrwxrwx）
++ 预定义宏的位操作：如`S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH`（rw-rw-r--）
+
+### 2.5 文件名和路径名截断
 
 ## 3. `creat`函数
 
