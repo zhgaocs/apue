@@ -1,11 +1,4 @@
----
-title: APUE Chapter 7 - Process Environment
-date: 2023-09-29 18:08:01
-tags: linux
-categories: OS
----
-
-# Advanced Programming in the UNIX Environment—Chapter 7  进程环境
+# Advanced Programming in the UNIX Environment—Chapter 7 进程环境
 
 ## 1. 进程终止
 
