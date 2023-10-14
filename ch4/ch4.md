@@ -1,10 +1,3 @@
----
-title: APUE Chapter 4 - Files and Directories
-date: 2023-10-08 23:40:06
-tags: linux
-categories: OS
----
-
 # Advanced Programming in the UNIX Environment—Chapter 4  文件和目录
 
 ## 1. `stat`、`fstat`和`lstat`函数
