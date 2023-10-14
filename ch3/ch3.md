@@ -224,7 +224,7 @@ ssize_t pwrite(int fd, const void *buf, size_t nbytes, off_t offset);
 
 ### 9.2 特点
 
-`pread`相当于顺序调用`lseek`和`read`，但是`pread`不可被中断，且**`pread`不更新文件指针**
+`pread`相当于顺序调用`lseek`和`read`，但是`pread`不可被中断，且**不更新文件指针**
 
 `pwrite`同理
 
@@ -275,7 +275,7 @@ fcntl(fd, F_DUPFD, fd2);
 int fsync(int fd);
 int fdatasync(int fd);
 
-void sync();
+void sync(void);
 ```
 
 ### 11.3 效果
