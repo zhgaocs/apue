@@ -1,17 +1,19 @@
 /**
- * copy standard input to standard output using getc and putc
+ * copy standard input to standard output using fgets and fputs
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MAXLINE 16
+
 int main()
 {
-    int c;
+    char buf[MAXLINE];
 
-    while ((c = getc(stdin)) != EOF)
+    while (fgets(buf, MAXLINE, stdin) != NULL)
 
-        if (putc(c, stdout) == EOF)
+        if (fputs(buf, stdout) == EOF)
         {
             fprintf(stderr, "output error");
             exit(1);
