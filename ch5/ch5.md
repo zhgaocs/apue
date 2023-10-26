@@ -72,7 +72,7 @@ int setvbuf(FILE *restrict fp, char *restrict buf, int mode, size_t size);
 
 #### 2.2.3 搭配不同参数时的效果
 
-![setbuf和setvbuf函数](D:/GithubBlog/source/_posts/setbuf_setvbuf.png)
+![setbuf和setvbuf函数](./images/setbuf_setvbuf.png)
 
 ### 2.3 冲洗（flush）
 
@@ -180,13 +180,13 @@ int feof(FILE *fp);
 void clearerr(FILE *fp);
 ```
 
-### 5.3 `ungetc`函数
+### 5.4 `ungetc`函数
 
-#### 5.3.1 功能
+#### 5.4.1 功能
 
 将字符推回到输入流中
 
-#### 5.3.2 函数原型
+#### 5.4.2 函数原型
 
 ```C
 #include <stdio.h>
@@ -195,14 +195,14 @@ void clearerr(FILE *fp);
 int ungetc(int c, FILE *fp);
 ```
 
-#### 5.3.3 注意
+#### 5.4.3 注意
 
 + 字符推回流后，读出字符的顺序与压送回的顺序相反
 + 不能回送EOF
 + 回送的字符不必是上一次读到的字符
 + 到达文件尾端仍可以回送字符*（因为成功的`ungetc`调用会清除流的文件结束标志）*
 
-### 5.4 输出
+### 5.5 输出
 
 ```C
 #include <stdio.h>
@@ -392,7 +392,7 @@ int vfscanf(FILE *restrict fp, const char *restrict format, va_list arg);
 int vsscanf(const char *restrict buf, const char *restrict format, va_list arg); // 从字符串中读取格式化输入
 ```
 
-## 9. 获得流对应的描述符
+## 10. 获得流对应的描述符
 
 ```C
 #include <stdio.h>
@@ -401,15 +401,15 @@ int vsscanf(const char *restrict buf, const char *restrict format, va_list arg);
 int fileno(FILE * fp);
 ```
 
-## 10. 临时文件
+## 11. 临时文件
 
-### 10.1 `tmpnam`函数
+### 11.1 `tmpnam`函数
 
-#### 10.1.1 功能
+#### 11.1.1 功能
 
 生成并返回一个有效的临时文件名
 
-#### 10.1.2 函数原型
+#### 11.1.2 函数原型
 
 ```C
 #include <stdio.h>
@@ -418,18 +418,18 @@ int fileno(FILE * fp);
 char *tmpnam(char *ptr);
 ```
 
-#### 10.1.3 参数`ptr`
+#### 11.1.3 参数`ptr`
 
 + 为`NULL`时，函数返回指向静态区路径名的指针，下次调用将重写此区域
 + 不为`NULL`时，`ptr`指向一个长度至少为`L_tmpnam`*（定义在`<stdio.h>`中）*的字符数组
 
-### 10.2 `tmpfile`函数
+### 11.2 `tmpfile`函数
 
-#### 10.2.1 功能
+#### 11.2.1 功能
 
 创建一个临时文件（类型为`wb+`）
 
-#### 10.2.2 函数原型
+#### 11.2.2 函数原型
 
 ```C
 #include <stdio.h>
@@ -438,17 +438,17 @@ char *tmpnam(char *ptr);
 FILE *tmpfile(void);
 ```
 
-#### 10.2.3 注意
+#### 11.2.3 注意
 
 `tmpfile`创建的临时文件关闭或程序结束时会自动删除
 
-### 10.3 `tempnam`函数
+### 11.3 `tempnam`函数
 
-#### 10.3.1 功能
+#### 11.3.1 功能
 
 生成并返回一个有效的临时文件名
 
-#### 10.3.2 函数原型
+#### 11.3.2 函数原型
 
 ```C
 #include <stdio.h>
@@ -457,24 +457,24 @@ FILE *tmpfile(void);
 char *tempnam(const char *directory, const char *prefix);
 ```
 
-#### 10.3.3 参数`directory`的确定顺序
+#### 11.3.3 参数`directory`的确定顺序
 
 1. 环境变量`TMPDIR`
 2. 非`NULL`的`directory`
 3. 字符串`P_tmpdir`*（定义在`<stdio.h>`中）*
 4. 本地目录（通常是`/tmp`）
 
-#### 10.3.4 参数`prefix`
+#### 11.3.4 参数`prefix`
 
 如果`prefix`不为`NULL`，则其最多包含五个字符将作为文件名的开头
 
-### 10.4 `mkstemp`函数
+### 11.4 `mkstemp`函数
 
-#### 10.4.1 功能
+#### 11.4.1 功能
 
 创建一个临时文件并打开
 
-#### 10.4.2 函数原型
+#### 11.4.2 函数原型
 
 ```C
 #include <stdlib.h>
@@ -483,6 +483,6 @@ char *tempnam(const char *directory, const char *prefix);
 int mkstemp(char *template);
 ```
 
-#### 10.4.3 注意
+#### 11.4.3 注意
 
 `mkstemp`创建的临时文件不会自动删除*（如果想要删除，需要自行`unlink`）*
