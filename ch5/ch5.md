@@ -59,8 +59,8 @@ int fwide(FILE *fp, int mode);
 ```C
 #include <stdio.h>
 
-// 成功返回0，出错返回非0值
 void setbuf(FILE *restrict fp, char *restrict buf);
+// 成功返回0，出错返回非0值
 int setvbuf(FILE *restrict fp, char *restrict buf, int mode, size_t size);
 ```
 
@@ -198,7 +198,7 @@ int ungetc(int c, FILE *fp);
 #### 5.4.3 注意
 
 + 字符推回流后，读出字符的顺序与压送回的顺序相反
-+ 不能回送EOF
++ 不能回送`EOF`
 + 回送的字符不必是上一次读到的字符
 + 到达文件尾端仍可以回送字符*（因为成功的`ungetc`调用会清除流的文件结束标志）*
 
