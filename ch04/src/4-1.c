@@ -4,6 +4,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 
 int main(int argc, char *argv[])
 {
@@ -13,7 +14,7 @@ int main(int argc, char *argv[])
 
     for (i = 1; i < argc; i++)
     {
-        printf("%s", argv[i]);
+        printf("%s: ", argv[i]);
         if (lstat(argv[i], &buf) < 0)
         {
             fprintf(stderr, "lstat error");
@@ -23,13 +24,13 @@ int main(int argc, char *argv[])
             ptr = "regular";
         else if (S_ISDIR(buf.st_mode))
             ptr = "directory";
-        else if (S_ISCHAR(buf.st_mode))
+        else if (S_ISCHR(buf.st_mode))
             ptr = "character special";
         else if (S_ISBLK(buf.st_mode))
             ptr = "block special";
         else if (S_ISFIFO(buf.st_mode))
             ptr = "fifo";
-        else if (S_ISLINK(buf.st_mode))
+        else if (S_ISLNK(buf.st_mode))
             ptr = "symbolic link";
         else if (S_ISSOCK(buf.st_mode))
             ptr = "socket";
