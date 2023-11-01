@@ -8,15 +8,15 @@ The purpose of this repository is to help readers better understand and study th
 
 ## Contents
 
-+ [Chapter 3 - File I/O](./ch3/ch3.md)
++ [Chapter 03 - File I/O](./ch03/ch03.md)
 
-+ [Chapter 4 - Files and Directories](./ch4/ch4.md)
++ [Chapter 04 - Files and Directories](./ch04/ch04.md)
 
-+ [Chapter 5 - Standard I/O Library](./ch5/ch5.md)
++ [Chapter 05 - Standard I/O Library](./ch05/ch05.md)
 
-+ [Chapter 6 - System Data Files and Information](./ch6/ch6.md)
++ [Chapter 06 - System Data Files and Information](./ch06/ch06.md)
 
-+ [Chapter 7 - Process Environment](./ch7/ch7.md)
++ [Chapter 07 - Process Environment](./ch07/ch07.md)
 
 ## Sample Code
 
