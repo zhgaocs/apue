@@ -1,4 +1,4 @@
-# Advanced Programming in the UNIX Environment—Chapter 4  文件和目录
+# Advanced Programming in the UNIX Environment—Chapter 04  文件和目录
 
 ## 1. `stat`、`fstat`和`lstat`函数
 
