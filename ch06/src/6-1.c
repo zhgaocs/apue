@@ -17,5 +17,6 @@ getpwnam(const char *name)
             break; /* found a match */
     }
     endpwent();
+
     return ptr; /* ptr is NULL if no match found */
 }
