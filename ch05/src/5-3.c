@@ -14,7 +14,7 @@ int main()
 
     if (getchar() == EOF)
     {
-        perror("getchar error");
+        fprintf(stderr, "getchar error");
         exit(1);
     }
 
@@ -26,18 +26,19 @@ int main()
 
     if ((fp = fopen("/etc/motd", "r")) == NULL)
     {
-        perror("fopen error");
+        fprintf(stderr, "fopen error");
         exit(1);
     }
     if (getc(fp) == EOF)
     {
-        perror("getc error");
+        fprintf(stderr, "getc error");
         exit(1);
     }
     pr_stdio("/etc/motd", fp);
 
     exit(0);
 }
+
 void pr_stdio(const char *name, FILE *fp)
 {
     printf("stream = %s, ", name);

@@ -17,7 +17,7 @@ int main()
 
     if ((fp = tmpfile()) == NULL) /* create temp file */
     {
-        perror("tmpfile error");
+        fprintf(stderr, "tmpfile error");
         exit(1);
     }
 
@@ -25,7 +25,7 @@ int main()
     rewind(fp);                        /* then read it back */
     if (fgets(line, sizeof(line), fp) == NULL)
     {
-        perror("fgets error");
+        fprintf(stderr, "fgets error");
         exit(1);
     }
 

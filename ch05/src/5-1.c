@@ -10,12 +10,13 @@ int main()
     int c;
 
     while ((c = getc(stdin)) != EOF)
-
+    {
         if (putc(c, stdout) == EOF)
         {
             fprintf(stderr, "output error");
             exit(1);
         }
+    }
 
     if (ferror(stdin))
     {

@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
     if (argc != 3)
     {
-        perror("usage: a.out <directory> <prefix>");
+        fprintf(stderr, "usage: a.out <directory> <prefix>");
         exit(1);
     }
 
