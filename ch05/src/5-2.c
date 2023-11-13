@@ -1,7 +1,6 @@
 /**
  * copy standard input to standard output using fgets and fputs
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -1,7 +1,6 @@
 /**
  * copy standard input to standard output using getc and putc
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 

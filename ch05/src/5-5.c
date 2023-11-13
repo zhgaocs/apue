@@ -1,7 +1,6 @@
 /**
  * demonstrate tempnam function
  */
-
 #include <stdlib.h>
 #include <stdio.h>
 
