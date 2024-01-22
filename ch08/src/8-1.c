@@ -1,7 +1,6 @@
 /**
  * example of fork function
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -15,23 +14,22 @@ int main()
     pid_t pid;
 
     var = 88;
-
     if (write(STDOUT_FILENO, buf, sizeof(buf) - 1) != sizeof(buf) - 1)
     {
-        fprintf(stderr, "write error");
+        perror("write error");
         exit(1);
     }
 
-    printf("before fork\n");
+    printf("before fork\n"); /* we don't flush stdout */
 
     if ((pid = fork()) < 0)
     {
-        fprintf(stderr, "fork error");
+        perror("fork error");
         exit(1);
     }
     else if (pid == 0) /* child */
-    {
-        glob++; /* modify variables */
+    {                  /* modify variable */
+        glob++;
         var++;
     }
     else
