@@ -18,7 +18,7 @@ int main()
     }
     else if (pid == 0) /* specify pathname, specify environment */
         if (execle("/home/sar/bin/echoall", "echoall",
-                   "myarg1", "MY_ARG2", (char *)0, env_init) < 0)
+                   "myarg1", "MY ARG2", (char *)0, env_init) < 0)
         {
             perror("execle error");
             exit(1);
