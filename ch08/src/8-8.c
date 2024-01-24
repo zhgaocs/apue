@@ -5,7 +5,7 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-char *env_init[] = {"USER=unknown", "PATH=/tmp", NULL};
+char *my_env[] = {"USER=zhgaocs", (char *)0};
 
 int main()
 {
@@ -17,8 +17,7 @@ int main()
         exit(1);
     }
     else if (pid == 0) /* specify pathname, specify environment */
-        if (execle("/home/sar/bin/echoall", "echoall",
-                   "myarg1", "MY ARG2", (char *)0, env_init) < 0)
+        if (execle("/usr/bin/bash", "bash", "-c", "echo $USER", (char *)0, my_env) < 0)
         {
             perror("execle error");
             exit(1);
@@ -36,7 +35,7 @@ int main()
         exit(1);
     }
     else if (pid == 0) /* specify filename, inherit environment */
-        if (execlp("echoall", "echoall", "only 1 arg", (char *)0) < 0)
+        if (execlp("bash", "bash", "-c", " echo hello, world", (char *)0) < 0)
         {
             perror("execlp error");
             exit(1);
